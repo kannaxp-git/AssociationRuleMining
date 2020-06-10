@@ -11,7 +11,7 @@ C1 = {}
 transactions = 0
 D = []
 T = []
-with open("DataSet5.txt", "r") as f:
+with open("./data/DataSet5.txt", "r") as f:
     for line in f:
         T = []
         transactions += 1
