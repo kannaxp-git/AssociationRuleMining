@@ -2,8 +2,8 @@ import itertools
 
 """prompt user to enter support and confidence values in percent"""
 
-support = int(raw_input("Please enter support value in %: "))
-confidence = int(raw_input("Please enter confidence value in %: "))
+support = 0.2 #int(raw_input("Please enter support value in %: "))
+confidence = 0.9 #int(raw_input("Please enter confidence value in %: "))
 
 """Compute candidate 1-itemset"""
 C1 = {}
@@ -23,9 +23,9 @@ with open("DataSet5.txt", "r") as f:
                 count = C1[word]
                 C1[word] = count + 1
         D.append(T)
-print "-------------------------TEST DATASET----------------------------"
-print D
-print "-----------------------------------------------------------------"
+print("-------------------------TEST DATASET----------------------------")
+print(D)
+print("-----------------------------------------------------------------")
 #print "--------------------CANDIDATE 1-ITEMSET------------------------- "
 #print C1
 #print "-----------------------------------------------------------------"
@@ -37,9 +37,9 @@ for key in C1:
         list = []
         list.append(key)
         L1.append(list)
-print "----------------------FREQUENT 1-ITEMSET-------------------------"
-print L1
-print "-----------------------------------------------------------------"
+print("----------------------FREQUENT 1-ITEMSET-------------------------")
+print(L1)
+print("-----------------------------------------------------------------")
 
 """apriori_gen function to compute candidate k-itemset, (Ck) , using frequent (k-1)-itemset, (Lk_1)"""
  
@@ -117,9 +117,9 @@ def frequent_itemsets():
                 c.sort()
                 Lk.append(c)
         Lk_1 = []
-        print "-----------------------FREQUENT %d-ITEMSET------------------------" % k
-        print Lk
-        print "------------------------------------------------------------------"
+        print("-----------------------FREQUENT %d-ITEMSET------------------------" % k)
+        print(Lk)
+        print("------------------------------------------------------------------")
         for l in Lk:
             Lk_1.append(l)
         k += 1
@@ -141,9 +141,9 @@ def generate_association_rules():
     num = 1
     m = []
     L= frequent_itemsets()
-    print "---------------------ASSOCIATION RULES------------------"
-    print "RULES \t SUPPORT \t CONFIDENCE"
-    print "--------------------------------------------------------"
+    print("---------------------ASSOCIATION RULES------------------")
+    print("RULES \t SUPPORT \t CONFIDENCE")
+    print("--------------------------------------------------------")
     for list in L:
         for l in list:
             length = len(l)
@@ -168,8 +168,8 @@ def generate_association_rules():
                         for index in l:
                             if index not in s:
                                 m.append(index)
-                        print "Rule#  %d : %s ==> %s %d %d" %(num, s, m, 100*inc2/len(D), 100*inc2/inc1)
+                        print("Rule#  %d : %s ==> %s %d %d" %(num, s, m, 100*inc2/len(D), 100*inc2/inc1))
                         num += 1  
 
 generate_association_rules()   
-print "--------------------------------------------------------"
+print("--------------------------------------------------------")
