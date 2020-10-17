@@ -1,3 +1,8 @@
+"""
+Created on Thu Jul  9 21:08:39 2020
+
+@author: kach@microsoft.com
+"""
 import itertools
 
 class apriori:
